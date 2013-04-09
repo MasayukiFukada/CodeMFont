@@ -151,12 +151,16 @@ MergeFonts('tmp_scp_bold.ttf')
   SetFontNames('CodeM-Bold', 'CodeM', 'CodeM Bold', 'Bold', copyright, version)
   SetTTFName(0x411, 1, 'CodeM')
   SetUniqueID(0)
+  defAscent  = 835
+  defDescent = 215
   SetOS2Value('VendorID',                'MfFt')
   SetOS2Value('TypoLineGap',             0)
+  SetOS2Value('WinAscent',               addAscent)
+  SetOS2Value('WinDescent',              addDescent)
+  SetOS2Value('HHeadAscent',             addAscent)
+  SetOS2Value('HHeadDescent',           -addDescent)
   Generate('CodeM-Bold.ttf')
 
-  defAscent  = GetOS2Value('WinAscent')
-  defDescent = GetOS2Value('WinDescent')
   # Wide
   Print('CodeM-Bold-Wide の生成')
   SetFontNames('CodeMWide-Bold', 'CodeM Wide', 'CodeM Wide Bold', 'Wide', copyright, version)
