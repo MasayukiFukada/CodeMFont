@@ -1,4 +1,5 @@
 #!/usr/bin/fontforge
+# vim:ts=2:sw=2:tw=0
 
 Print('--------------------------------------------------')
 
@@ -22,7 +23,7 @@ Open('SourceCodePro-Regular.ttf')
   ClearInstrs()
   #ClearHints()
   UnlinkReference()
-  ScaleToEm(860,250)
+  ScaleToEm(750,250)
   CenterInWidth()
 Generate('tmp_scp_reg.ttf')
 Close()
@@ -41,14 +42,14 @@ Open('SourceCodePro-Bold.ttf')
   ClearInstrs()
   #ClearHints()
   UnlinkReference()
-  ScaleToEm(860,250)
+  ScaleToEm(750,250)
   CenterInWidth()
 Generate('tmp_scp_bold.ttf')
 Close()
 
 # --------------------------------------------------
 # Migu 1M
-# 860 x 140 = 1000(Em)
+# 750 x 140 = 1000(Em)
 # Win(Ascent, Descent)=(-195, -90)
 # hhea(height, width)=(-195, 90)
 # --------------------------------------------------
@@ -64,7 +65,7 @@ Open('migu-1m-regular.ttf')
   ClearInstrs()
   #ClearHints()
   UnlinkReference()
-  ScaleToEm(860,250)
+  ScaleToEm(750,250)
   CenterInWidth()
 Generate('tmp_mig_1m_r.ttf')
 Close()
@@ -81,7 +82,7 @@ Open('migu-1m-bold.ttf')
   ClearInstrs()
   #ClearHints()
   UnlinkReference()
-  ScaleToEm(860,250)
+  ScaleToEm(750,250)
   CenterInWidth()
 Generate('tmp_mig_1m_b.ttf')
 Close()
@@ -91,7 +92,7 @@ Close()
 
 # --------------------------------------------------
 # CodeM
-# 860 x 250 = 1110(Em)
+# 750 x 250 = 1110(Em)
 # Win(Ascent, Descent)=(-195, -90)
 # hhea(height, width)=(-195, 90)
 # --------------------------------------------------
@@ -110,6 +111,41 @@ MergeFonts('tmp_scp_reg.ttf')
   SetUniqueID(0)
   SetOS2Value('VendorID',                'MfFt')
   SetOS2Value('TypoLineGap',             0)
+  # ------------------------------
+  # フォント改造
+  Select(0u0021);               # !
+      ExpandStroke(20,0,0,0,1);
+  Select(0u002c);               # ,
+      ExpandStroke(20,0,0,0,1);
+  Select(0u002d); Move(0,-80);  # -
+  Select(0u002e);               # .
+      ExpandStroke(20,0,0,0,1);
+  Select(0u003a);               # :
+      ExpandStroke(20,0,0,0,1);
+  Select(0u003b);               # ;
+      ExpandStroke(20,0,0,0,1);
+  Select(0u003c); Move(0,-80);  # <
+  Select(0u003d); Move(0,-80);  # =
+  Select(0u003e); Move(0,-80);  # >
+  Select(0u0040); Move(0, 80);  # @
+  Select(0u005b); Move(0, 40);  # [
+  Select(0u005d); Move(0, 40);  # ]
+  Select(0u005e); Move(0,180);  # ^
+  Select(0u005f); Move(0,-60);  # _
+      ExpandStroke(40,0,0,0,1);
+  Select(0u007b); Move(0, 40);  # {
+  Select(0u007c); Move(0, 70);  # |
+      Select(0u002d); Copy(); Select(0u009c); Paste();
+      Rotate(90); Move(0,340); Copy(); Select(0u007c); Paste();
+      Select(0u002d); Copy(); Select(0u009c); Paste();
+      Rotate(90); Move(0,-140); Copy(); Select(0u007c); PasteInto();
+  Select(0u007d); Move(0, 40);  # }
+  Select(0u007e); Move(0,260);  # ~
+  #全角空白
+  Select(0u2610); Copy(); Select(0u3000); Paste()
+  Select(0u271a); Copy(); Select(0u3000); PasteInto()
+  OverlapIntersect()
+  # ------------------------------
   defAscent  = GetOS2Value('WinAscent')
   defDescent = GetOS2Value('WinDescent')
   addAscent  = defAscent + 64
@@ -158,6 +194,41 @@ MergeFonts('tmp_scp_bold.ttf')
   SetUniqueID(0)
   SetOS2Value('VendorID',                'MfFt')
   SetOS2Value('TypoLineGap',             0)
+  # ------------------------------
+  # フォント改造　
+  Select(0u0021);               # !
+      ExpandStroke(20,0,0,0,1);
+  Select(0u002c);               # ,
+      ExpandStroke(20,0,0,0,1);
+  Select(0u002d); Move(0,-80);  # -
+  Select(0u002e);               # .
+      ExpandStroke(20,0,0,0,1);
+  Select(0u003a);               # :
+      ExpandStroke(20,0,0,0,1);
+  Select(0u003b);               # ;
+      ExpandStroke(20,0,0,0,1);
+  Select(0u003c); Move(0,-80);  # <
+  Select(0u003d); Move(0,-80);  # =
+  Select(0u003e); Move(0,-80);  # >
+  Select(0u0040); Move(0, 80);  # @
+  Select(0u005b); Move(0, 40);  # [
+  Select(0u005d); Move(0, 40);  # ]
+  Select(0u005e); Move(0,180);  # ^
+  Select(0u005f); Move(0,-60);  # _
+      ExpandStroke(40,0,0,0,1);
+  Select(0u007b); Move(0, 40);  # {
+  Select(0u007c); Move(0, 70);  # |
+      Select(0u002d); Copy(); Select(0u009c); Paste();
+      Rotate(90); Move(0,340); Copy(); Select(0u007c); Paste();
+      Select(0u002d); Copy(); Select(0u009c); Paste();
+      Rotate(90); Move(0,-140); Copy(); Select(0u007c); PasteInto();
+  Select(0u007d); Move(0, 40);  # }
+  Select(0u007e); Move(0,260);  # ~
+  #全角空白
+  Select(0u2610); Copy(); Select(0u3000); Paste()
+  Select(0u271a); Copy(); Select(0u3000); PasteInto()
+  OverlapIntersect()
+  # ------------------------------
   defAscent  = GetOS2Value('WinAscent')
   defDescent = GetOS2Value('WinDescent')
   addAscent  = defAscent + 64
