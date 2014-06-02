@@ -114,16 +114,16 @@ MergeFonts('tmp_scp_reg.ttf')
   # ------------------------------
   # フォント改造
   Select(0u0021);               # !
-      ExpandStroke(20,0,0,0,1);
+    ExpandStroke(20,0,0,0,1);
   Select(0u002c);               # ,
-      ExpandStroke(20,0,0,0,1);
+    ExpandStroke(20,0,0,0,1);
   Select(0u002d); Move(0,-80);  # -
   Select(0u002e);               # .
-      ExpandStroke(20,0,0,0,1);
+    ExpandStroke(20,0,0,0,1);
   Select(0u003a);               # :
-      ExpandStroke(20,0,0,0,1);
+    ExpandStroke(20,0,0,0,1);
   Select(0u003b);               # ;
-      ExpandStroke(20,0,0,0,1);
+    ExpandStroke(20,0,0,0,1);
   Select(0u003c); Move(0,-80);  # <
   Select(0u003d); Move(0,-80);  # =
   Select(0u003e); Move(0,-80);  # >
@@ -132,19 +132,19 @@ MergeFonts('tmp_scp_reg.ttf')
   Select(0u005d); Move(0, 40);  # ]
   Select(0u005e); Move(0,180);  # ^
   Select(0u005f); Move(0,-60);  # _
-      ExpandStroke(40,0,0,0,1);
+    ExpandStroke(40,0,0,0,1);
   Select(0u007b); Move(0, 40);  # {
   Select(0u007c); Move(0, 70);  # |
-      Select(0u002d); Copy(); Select(0u009c); Paste();
-      Rotate(90); Move(0,340); Copy(); Select(0u007c); Paste();
-      Select(0u002d); Copy(); Select(0u009c); Paste();
-      Rotate(90); Move(0,-140); Copy(); Select(0u007c); PasteInto();
+    Select(0u002d); Copy(); Select(0u009c); Paste();
+    Rotate(90); Move(0,340); Copy(); Select(0u007c); Paste();
+    Select(0u002d); Copy(); Select(0u009c); Paste();
+    Rotate(90); Move(0,-140); Copy(); Select(0u007c); PasteInto();
   Select(0u007d); Move(0, 40);  # }
   Select(0u007e); Move(0,260);  # ~
   #句読点の位置調整
-  Select(0u3001); Move(-140,0);  # 、（読点）
+  Select(0u3001); Move(-140,0); # 、（読点）
     SetWidth(140,1);
-  Select(0u3002); Move(-140,0);  # 。（句点）
+  Select(0u3002); Move(-140,0); # 。（句点）
     SetWidth(140,1);
   #全角空白
   Select(0u2610); Copy(); Select(0u3000); Paste()
@@ -202,16 +202,16 @@ MergeFonts('tmp_scp_bold.ttf')
   # ------------------------------
   # フォント改造　
   Select(0u0021);               # !
-      ExpandStroke(20,0,0,0,1);
+    ExpandStroke(20,0,0,0,1);
   Select(0u002c);               # ,
-      ExpandStroke(20,0,0,0,1);
+    ExpandStroke(20,0,0,0,1);
   Select(0u002d); Move(0,-80);  # -
   Select(0u002e);               # .
-      ExpandStroke(20,0,0,0,1);
+    ExpandStroke(20,0,0,0,1);
   Select(0u003a);               # :
-      ExpandStroke(20,0,0,0,1);
+    ExpandStroke(20,0,0,0,1);
   Select(0u003b);               # ;
-      ExpandStroke(20,0,0,0,1);
+    ExpandStroke(20,0,0,0,1);
   Select(0u003c); Move(0,-80);  # <
   Select(0u003d); Move(0,-80);  # =
   Select(0u003e); Move(0,-80);  # >
@@ -220,19 +220,19 @@ MergeFonts('tmp_scp_bold.ttf')
   Select(0u005d); Move(0, 40);  # ]
   Select(0u005e); Move(0,180);  # ^
   Select(0u005f); Move(0,-60);  # _
-      ExpandStroke(40,0,0,0,1);
+    ExpandStroke(40,0,0,0,1);
   Select(0u007b); Move(0, 40);  # {
   Select(0u007c); Move(0, 70);  # |
-      Select(0u002d); Copy(); Select(0u009c); Paste();
-      Rotate(90); Move(0,340); Copy(); Select(0u007c); Paste();
-      Select(0u002d); Copy(); Select(0u009c); Paste();
-      Rotate(90); Move(0,-140); Copy(); Select(0u007c); PasteInto();
+    Select(0u002d); Copy(); Select(0u009c); Paste();
+    Rotate(90); Move(0,340); Copy(); Select(0u007c); Paste();
+    Select(0u002d); Copy(); Select(0u009c); Paste();
+    Rotate(90); Move(0,-140); Copy(); Select(0u007c); PasteInto();
   Select(0u007d); Move(0, 40);  # }
   Select(0u007e); Move(0,260);  # ~
   #句読点の位置調整
-  Select(0u3001); Move(-140,0);  # 、（読点）
+  Select(0u3001); Move(-140,0); # 、（読点）
     SetWidth(140,1);
-  Select(0u3002); Move(-140,0);  # 。（句点）
+  Select(0u3002); Move(-140,0); # 。（句点）
     SetWidth(140,1);
   #全角空白
   Select(0u2610); Copy(); Select(0u3000); Paste()
