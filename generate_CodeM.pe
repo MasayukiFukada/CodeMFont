@@ -141,6 +141,11 @@ MergeFonts('tmp_scp_reg.ttf')
       Rotate(90); Move(0,-140); Copy(); Select(0u007c); PasteInto();
   Select(0u007d); Move(0, 40);  # }
   Select(0u007e); Move(0,260);  # ~
+  #句読点の位置調整
+  Select(0u3001); Move(-140,0);  # 、（読点）
+    SetWidth(140,1);
+  Select(0u3002); Move(-140,0);  # 。（句点）
+    SetWidth(140,1);
   #全角空白
   Select(0u2610); Copy(); Select(0u3000); Paste()
   Select(0u271a); Copy(); Select(0u3000); PasteInto()
@@ -224,6 +229,11 @@ MergeFonts('tmp_scp_bold.ttf')
       Rotate(90); Move(0,-140); Copy(); Select(0u007c); PasteInto();
   Select(0u007d); Move(0, 40);  # }
   Select(0u007e); Move(0,260);  # ~
+  #句読点の位置調整
+  Select(0u3001); Move(-140,0);  # 、（読点）
+    SetWidth(140,1);
+  Select(0u3002); Move(-140,0);  # 。（句点）
+    SetWidth(140,1);
   #全角空白
   Select(0u2610); Copy(); Select(0u3000); Paste()
   Select(0u271a); Copy(); Select(0u3000); PasteInto()
