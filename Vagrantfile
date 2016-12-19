@@ -18,8 +18,15 @@ Vagrant.configure("2") do |config|
     cp source-code-pro-2.030R-ro-1.050R-it/TTF/*.ttf .
     cp migu-1m-20150712/*.ttf .
     fontforge -script generate_CodeM.pe
+    git clone https://github.com/Lokaltog/powerline-fontpatcher
+    fontforge -lang=py -script ./powerline-fontpatcher/scripts/powerline-fontpatcher CodeM-Regular.ttf
+    fontforge -lang=py -script ./powerline-fontpatcher/scripts/powerline-fontpatcher CodeM-Regular-Wide.ttf
+    fontforge -lang=py -script ./powerline-fontpatcher/scripts/powerline-fontpatcher CodeM-Regular-Expanded.ttf
+    fontforge -lang=py -script ./powerline-fontpatcher/scripts/powerline-fontpatcher CodeM-Bold.ttf
+    fontforge -lang=py -script ./powerline-fontpatcher/scripts/powerline-fontpatcher CodeM-Bold-Wide.ttf
+    fontforge -lang=py -script ./powerline-fontpatcher/scripts/powerline-fontpatcher CodeM-Bold-Expanded.ttf
     mkdir CodeM
-    mv CodeM-* CodeM
+    mv CodeM*ttf CodeM
     rm *.ttf
   SHELL
 end
