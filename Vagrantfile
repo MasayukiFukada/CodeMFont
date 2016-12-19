@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "document"
+  config.vm.box = "codem"
 
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
@@ -18,5 +18,8 @@ Vagrant.configure("2") do |config|
     cp source-code-pro-2.030R-ro-1.050R-it/TTF/*.ttf .
     cp migu-1m-20150712/*.ttf .
     fontforge -script generate_CodeM.pe
+    mkdir CodeM
+    mv CodeM-* CodeM
+    rm *.ttf
   SHELL
 end
